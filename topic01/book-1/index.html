@@ -86,7 +86,7 @@ h3
       <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
       <div class="navbar-brand">
         <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
-        Introducing HTML
+        Classes, Interfaces & Objects
       </div>
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -98,7 +98,6 @@ h3
           <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
           <li><a href= "#05" data-toggle="tab"> 05 </a> </li>
           <li><a href= "#06" data-toggle="tab"> 06 </a> </li>
-          <li><a href= "#07" data-toggle="tab"> 07 </a> </li>
       </ul>
     </div>
   </div>
@@ -109,13 +108,7 @@ h3
 <div class="tab-content">
   <div class="tab-pane active" id="Lab-01">
     <h1>Workspaces and Interfaces</h1>
-<ul>
-<li>Understand workspaces in Eclipse</li>
-<li>Understand Java Interfaces paradigm</li>
-<li>Specify an Interface</li>
-<li>Implement the Interface</li>
-<li>Use of Interface/Implementation in a Client Object</li>
-</ul>
+<p>Understand workspaces in Eclipse. Understand the Java Interfaces paradigm. Learn how to specify and implement an Interface. Use of Interface/Implementation in a Client Object</p>
   </div>
 
     <div class="tab-pane fade" id="01">
@@ -160,12 +153,13 @@ h3
     </div>
     <div class="tab-pane fade" id="03">
       <h1>Create a new project</h1>
-<h2>pen Eclipse</h2>
+<h2>Open Eclipse</h2>
 <p>Set your workspace to your persistent area (memory stick, network drive) Wherever you created your workspace last time!</p>
 <h2>Create a new Project called algorithms</h2>
 <p>Select <code>File - &gt;New -&gt; Project -&gt; Java Project</code></p>
 <h2>Eclipse: create a new package</h2>
 <p>Inside the algorithms project, create a new package, also called algorithms</p>
+<p><img alt="" src="img/03.png"></p>
 <h2>Eclipse: Create an Interface</h2>
 <p>In the algorithms package, create a new interface, called <code>HelloWorldInterface</code></p>
 <p>Right-click on algorithms Package and Select New –&gt; Interface</p>
@@ -180,87 +174,70 @@ h3
     </div>
     <div class="tab-pane fade" id="04">
       <h1>Implementing the Interface</h1>
-<p>Next we will create a class HelloWorld that implements HelloWorldInterface
-In the algorithms package, create a new class called HelloWorld (do not press OK)
-In the Interfaces box on the class creation dialogue, add the HelloWorldInterface
-Click OK</p>
-<p>Eclipse: Implementing the Interface
-You’ll see that Eclipse will generate interface methods for you 
-Add a String data attribute hello to HelloWorld
-Create a default constructor that initialises hello to “Hello World!”
-Implement the display() method so that it prints “Hello World” to the screen
-public class HelloWorld implements HelloWorldInterface {
-private String hello;
-public HelloWorld(){
-hello = "Hello World!";
+<p>Next we will create a class HelloWorld that implements HelloWorldInterface. In the algorithms package, create a new class called HelloWorld (do not press OK)</p>
+<p>In the Interfaces box on the class creation dialogue, add the HelloWorldInterface</p>
+<p><img alt="" src="img/04.png"></p>
+<p>Click OK</p>
+<p>You’ll see that Eclipse will generate interface methods for you </p>
+<p>Add a String data attribute hello to HelloWorld</p>
+<p>Create a default constructor that initialises hello to “Hello World!”</p>
+<p>Implement the display() method so that it prints “Hello World” to the screen</p>
+<pre><code>public class HelloWorld implements HelloWorldInterface {
+
+    private String hello;
+
+    public HelloWorld() {
+        hello = &quot;Hello World!&quot;;
+    }
+
+    public void display() {
+        System.out.println(hello);
+    }
 }
-public void display() {
-System.out.println(hello);
-}
-}</p>
+</code></pre>
     </div>
     <div class="tab-pane fade" id="05">
-      <h1>Implementing the Interface</h1>
-<p>Next we will create a class HelloWorld that implements HelloWorldInterface
-In the algorithms package, create a new class called HelloWorld (do not press OK)
-In the Interfaces box on the class creation dialogue, add the HelloWorldInterface
-Click OK</p>
-<p>Eclipse: Implementing the Interface
-You’ll see that Eclipse will generate interface methods for you 
-Add a String data attribute hello to HelloWorld
-Create a default constructor that initialises hello to “Hello World!”
-Implement the display() method so that it prints “Hello World” to the screen
-public class HelloWorld implements HelloWorldInterface {
-private String hello;
-public HelloWorld(){
-hello = "Hello World!";
-}
-public void display() {
-System.out.println(hello);
-}
-}</p>
-    </div>
-    <div class="tab-pane fade" id="06">
-      <p>Eclipse: Testing the Interface
-Next we will create a JUnit test, to test the Interface/Implementation.
-In the algorithms package, create a new JUnit test by selecting File-&gt;New-&gt;JUnit Test and call it HelloWorldTest.
-Modify HelloWorldTest  to perform the following test (I have not included the JUnit import statements)
-public class HelloWorldTest {
+      <h1>Testing the Interface</h1>
+<p>Next we will create a JUnit test, to test the Interface/Implementation.</p>
+<p>In the algorithms package, create a new JUnit test by selecting File-&gt;New-&gt;JUnit Test and call it HelloWorldTest.</p>
+<p>Modify HelloWorldTest  to perform the following test (I have not included the JUnit import statements)</p>
+<pre><code>public class HelloWorldTest {
   @Test
   public void testHello() {
     HelloWorldInterface hw = new HelloWorld();
     assertTrue(hw!=null);
     hw.display();
   }
-}</p>
-    </div>
-    <div class="tab-pane fade" id="07">
-      <h1>Running the JUnit test</h1>
-<p>Next we will run HelloWorldTest
-Right click on HelloWorldTest
-Run – JUnit Test</p>
-<p>Eclipse: Creating a Client 
-In algorithms, create a new class called HelloWorldClient
-Add a main function to HelloWorldClient, such that it resembles:
-package algorithms;
-public class HelloWorldClient {
-public static void main(String[] args) {
-HelloWorldInterface hw = new HelloWorld();
-hw.display();
 }
-}</p>
-<p>Eclipse: Running the Client
-Execute HelloWorldClient as a Java Application
-Right-click on HelloWorldClient
-Run as -&gt; Java Application
-You should see “Hello World!” displayed in the Eclipse console.</p>
-<p>Java Interfaces
-Congratulations! You have now successfully:
-Set up your workspace
-Created an Interface
-Implemented that interface
-Created JUnit tests for interface/implementation
-Created a client that uses the interface/implementation</p>
+</code></pre>
+
+<p>Next we will run HelloWorldTest. Right click on HelloWorldTest and select <code>Run – JUnit Test</code></p>
+<p><img alt="" src="img/05.png"></p>
+    </div>
+    <div class="tab-pane fade" id="06">
+      <h1>Creating a Client</h1>
+<p>In algorithms, create a new class called HelloWorldClient</p>
+<p>Add a main function to HelloWorldClient, such that it resembles: package algorithms;</p>
+<pre><code>public class HelloWorldClient {
+  public static void main(String[] args) {
+    HelloWorldInterface hw = new HelloWorld();
+    hw.display();
+  }
+}
+</code></pre>
+
+<h2>Running the Client</h2>
+<p>Execute HelloWorldClient as a Java Application by right-clicking on HelloWorldClient and select <code>Run as -&gt; Java Application</code></p>
+<p>You should see “Hello World!” displayed in the Eclipse console.</p>
+<h2>Java Interfaces</h2>
+<p>Congratulations! You have now successfully:</p>
+<ul>
+<li>Set up your workspace</li>
+<li>Created an Interface</li>
+<li>Implemented that interface</li>
+<li>Created JUnit tests for interface/implementation</li>
+<li>Created a client that uses the interface/implementation</li>
+</ul>
     </div>
 </div>
 <br> <br>
