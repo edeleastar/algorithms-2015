@@ -1,0 +1,248 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+<style>
+
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+</style>
+
+<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+      <div class="navbar-brand">
+        <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
+        Introduction to Algorithms
+      </div>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href= "#Lab-04" data-toggle="tab"> Lab-04 </a> </li>
+          <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
+          <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
+          <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="Lab-04">
+    <h1>Lab 4 - Union-Find</h1>
+<p>The exercises in this lab are taken from the recommended textbook: Algorithms 4th by R. Sedgewick and K. Wayne (Section 1.5). They are based on the lectures in this topic. On competing the lab you will:</p>
+<ul>
+<li>Understand the union find algorithm.</li>
+<li>Develop implementation of the union-find algorithm.</li>
+<li>Modify union-find implementation to include path compression.</li>
+</ul>
+  </div>
+
+    <div class="tab-pane fade" id="01">
+      <h1>Eclipse: Implement Union Find</h1>
+<p>Develop classes <strong>QuickFindUF, QuickUnionUF</strong> and <strong>WeightedQuickUnionUF</strong> that implement quick-find, quick-union and weighted quick-union respectively. All classes will have the following API:
+<img alt="" src="img/00.png"> </p>
+<h3>Create Eclipse Project</h3>
+<ol>
+<li>Create a new project called <em>lab4</em>.  </li>
+<li>Create a <strong>package</strong> called <em>lab4</em>.</li>
+</ol>
+<h3>Add stdlib jar to the project</h3>
+<ol>
+<li>Create a folder called <em>lib</em> in your project folder.</li>
+<li>Download the <em>stdlib-package</em> jar from <a href="http://introcs.cs.princeton.edu/java/stdlib/stdlib-package.jar">here</a>  and copy to the <em>lib</em> folder.</li>
+<li>Select  the jar file, then right click and select Build Path -&gt; Add to Build Path.</li>
+</ol>
+<h3>Create Class</h3>
+<ol>
+<li>Use the following code as a starter. Please refer to the class notes for instruction on how to implement the methods in the following class: </li>
+</ol>
+<pre><code>package lab4;
+
+import edu.princeton.cs.introcs.StdIn;
+import edu.princeton.cs.introcs.StdOut;
+
+public class QuickFindUF {
+    private int[] id;    // id[i] = component identifier of i
+    private int count;   // number of components
+
+    /**
+     * Initializes an empty union-find data structure with N sites
+     */
+    public QuickFindUF(int N) {
+       //TODO
+    }
+
+    /**
+     * Returns the number of components.
+     */
+    public int count() {
+        //TODO
+        return 0;
+    }
+
+    /**
+     * Returns the component identifier for the component containing site p.
+     */
+    public int find(int p) {
+        //TODO
+        return 0;
+    }
+
+    /**
+     * Returns true if the the two sites are in the same component.
+     */
+    public boolean connected(int p, int q) {
+       //TODO
+        return false;
+    }
+
+    /**
+     * Merges the component containing site p with the 
+     * the component containing site q.
+     */
+    public void union(int p, int q) {
+        //TODO
+    }
+}
+</code></pre>
+    </div>
+    <div class="tab-pane fade" id="02">
+      <h1>Eclipse: Union Find Exercises</h1>
+<p>You should do the following exercises by hand using paper and pencil. Then, confirm your answer for the id[] array using the result from exercise 1(You can use Eclipse Debugging to view the id[] array values or just print the values to the console). The number of ‘sites’ for each question is 10 (i.e. the size of the id[] array,N = 10) </p>
+<ol>
+<li>Show the contents of the id[] array and the number of components for each input pair when you use quick-find for the sequence:
+9-0 3-4 5-8 7-2 2-1 5-7 0-3 4-2.</li>
+<li>Repeat exercise 1, but use quick-union. Draw the forest of trees represented by the id[] array after each input pair is processed.</li>
+<li>Repeat exercise 1, but use weighted quick-union.</li>
+</ol>
+<p>Add the following main method to the classes from exercise 1 to check your results:</p>
+<pre><code> /**
+  * Reads in a sequence of pairs of integers (between 0 and N-1) from standard input, 
+     * where each integer represents some site;
+     * if the sites are in different components, merge the two components
+     * and print the pair to standard output.
+     */
+    public static void main(String[] args) {
+        int N = StdIn.readInt();
+        QuickFindUF uf = new QuickFindUF(N);
+        while (!StdIn.isEmpty()) {
+            int p = StdIn.readInt();
+            int q = StdIn.readInt();
+            if (uf.connected(p, q)) continue;
+            uf.union(p, q);
+            StdOut.println(p + &quot; &quot; + q);
+        }
+        StdOut.println(uf.count() + &quot; components&quot;);
+    }
+</code></pre>
+    </div>
+    <div class="tab-pane fade" id="03">
+      <h1>Path Compression</h1>
+<p>Modify QuickUnionUF.java from exercise 1 to include path compression, by adding a loop to find() that links every site on the path from p to the root. Give a sequence of input pairs that causes this method to produce a path of length 4. 
+Remember from Class: the cost per operation for this algorithm is known to be logarithmic.</p>
+    </div>
+</div>
+<br> <br>
+
+
+    </div>
+
+
+<div class="credits navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <small>
+    Prepared by Framk Walsh (fwwalsh@wit.ir) & Eamonn De Leastar (edeleastar@wit.ie). Except where otherwise noted, this content is licensed under a
+    <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+        target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+    </a>
+    </small>
+</div>    <script>
+
+$(document).ready(function()
+{
+  $("img").addClass ("img-responsive");
+
+  $(".tab-content img").each(function()
+  {
+    var title = this.alt;
+    $(this).after('<figcaption class="caption"> <em>'+ title +'</em></figcaption>');
+  });
+})    </script>
+
+  </body>
+ </html>
