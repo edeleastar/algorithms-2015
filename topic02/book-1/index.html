@@ -95,6 +95,7 @@ h3
           <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
           <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
           <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
+          <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
       </ul>
     </div>
   </div>
@@ -105,10 +106,11 @@ h3
 <div class="tab-content">
   <div class="tab-pane active" id="Lab-04">
     <h1>Lab 4 - Union-Find</h1>
-<p>The exercises in this lab are taken from the recommended textbook: Algorithms 4th by R. Sedgewick and K. Wayne (Section 1.5). They are based on the lectures in this topic. On competing the lab you will:</p>
+<p>On competing the lab you will:</p>
 <ul>
 <li>Understand the union find algorithm.</li>
 <li>Develop implementation of the union-find algorithm.</li>
+<li>Create a JUnit test for Union Find algorithms using Eclipse.</li>
 <li>Modify union-find implementation to include path compression.</li>
 </ul>
   </div>
@@ -192,27 +194,97 @@ public class QuickFindUF {
 <li>Repeat exercise 1, but use weighted quick-union.</li>
 </ol>
 <p>Add the following main method to the classes from exercise 1 to check your results:</p>
-<pre><code> /**
-  * Reads in a sequence of pairs of integers (between 0 and N-1) from standard input, 
+<pre><code>/**
+     * Reads in a sequence of pairs of integers (between 0 and N-1) from standard input, 
      * where each integer represents some site;
      * if the sites are in different components, merge the two components
      * and print the pair to standard output.
      */
     public static void main(String[] args) {
+        StdOut.println(&quot;Enter the number of 'sites':&quot;);
         int N = StdIn.readInt();
         QuickFindUF uf = new QuickFindUF(N);
+        StdOut.println(&quot;Input pairs of integers:&quot;);
         while (!StdIn.isEmpty()) {
             int p = StdIn.readInt();
             int q = StdIn.readInt();
             if (uf.connected(p, q)) continue;
             uf.union(p, q);
             StdOut.println(p + &quot; &quot; + q);
+            StdOut.println(uf.count() + &quot; components&quot;);
         }
-        StdOut.println(uf.count() + &quot; components&quot;);
+
     }
 </code></pre>
     </div>
     <div class="tab-pane fade" id="03">
+      <h1>Eclipse: Create JUnit Test</h1>
+<p>In this section of the lab you will create a test case that checks the functionality of the classes you created so far.</p>
+<h4>Create QuickFindUFTest</h4>
+<ol>
+<li>Add JUnit4 to you project path by right clicking on the project and selecting <strong>Build Path -&gt; Configure Build Path</strong>. In the library tab, select <strong>Add Library</strong> and select JUnit from the options available. Then, in the JUnit dialog screen,  select <strong>JUnit4</strong>. If you've any difficulty with this please ask your instructor. </li>
+<li>Select the lab4 project in Eclipse and do <strong>File -&gt; New -&gt; Junit Test Case</strong>. the start the JUnit wizard. Enter <em>QuickFindUFTest</em> as the name and select to create <em>setup()</em> and <em>teardown()</em> method stubs and select <em>next</em>.
+<img alt="" src="img/unittest1.png"> </li>
+<li>In the Test Methods step, select all method except the main method as follows:
+<img alt="" src="img/unittest3.png"></li>
+<li>Click finish to generate the Junit Test.</li>
+</ol>
+<h3>Add the Test Code</h3>
+<p>Add the following private field to the test case:</p>
+<pre><code>private QuickFindUF  uf;
+</code></pre>
+
+<p>Find the <strong>setup()</strong> method in the generated code and add the following code to initialise <em>uf</em>:</p>
+<pre><code>uf = new QuickFindUF(10);
+</code></pre>
+
+<p>For the rest of the generated method stubs, replace the <em>fail("not yet implemented")</em> statement with the following code to test each method:</p>
+<p><strong>testQuickFindUF()</strong>:</p>
+<pre><code>    for (int i = 0; i &lt; 10; i++) assertSame(i, uf.find(i));
+</code></pre>
+
+<p><strong>testCount()</strong>:</p>
+<pre><code>    assertSame(uf.count(),10);
+</code></pre>
+
+<p><strong>testFind()</strong>:</p>
+<pre><code>        assertSame(0, uf.find(0));
+
+        uf.union(0,9);
+        assertSame(9, uf.find(0));
+</code></pre>
+
+<p><strong>testConnected()</strong>:</p>
+<pre><code>    //test sites not connected
+    for (int i = 1; i &lt; 10; i++) {
+            assertFalse(uf.connected(0, i));
+        }
+
+    //test connections
+    uf.union(0, 1);
+        uf.union(9, 8);
+        assertTrue(uf.connected(1, 0));
+        assertTrue(uf.connected(9, 8));
+
+        uf.union(8, 1);
+        assertTrue(uf.connected(0, 9));
+</code></pre>
+
+<p><strong>testUnion()</strong></p>
+<pre><code>    uf.union(0, 1);
+        uf.union(1, 2);
+        uf.union(2, 3);
+        uf.union(3, 4);
+        assertSame(4, uf.find(0));
+        assertNotSame(uf.find(0),uf.find(5));
+</code></pre>
+
+<h3>Run the Test</h3>
+<p>In the <em>Package Explorer</em> view, right click on the  QuickFindUFTest and select <strong>Run as -&gt; Junit Test</strong>. This will run your test case and open the JUnit view with the results. All going well it should look like this:
+<img alt="" src="img/unittest2.png"> </p>
+<p>Now, create tests for the other union find classes (Quick Find, Weighted Quick Find).</p>
+    </div>
+    <div class="tab-pane fade" id="04">
       <h1>Path Compression</h1>
 <p>Modify QuickUnionUF.java from exercise 1 to include path compression, by adding a loop to find() that links every site on the path from p to the root. Give a sequence of input pairs that causes this method to produce a path of length 4. 
 Remember from Class: the cost per operation for this algorithm is known to be logarithmic.</p>
