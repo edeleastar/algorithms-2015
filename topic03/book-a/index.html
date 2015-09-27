@@ -97,6 +97,7 @@ h3
           <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
           <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
           <li><a href= "#05" data-toggle="tab"> 05 </a> </li>
+          <li><a href= "#06" data-toggle="tab"> 06 </a> </li>
           <li><a href= "#Exercises" data-toggle="tab"> Exercises </a> </li>
       </ul>
     </div>
@@ -362,6 +363,38 @@ import pim.log.FileLogger;
 <p>We have used a component (xstream) to convert an internal data structure into an XML stream, which we have written to a file.</p>
 <p>See if you can commit the changes we have just made to git.</p>
     </div>
+    <div class="tab-pane fade" id="06">
+      <h1>Git</h1>
+<p>If you have been committing your project to git during this lab, you should be able to select <code>Team-&gt;Show in History</code>:</p>
+<p><img alt="" src="img/x20.png"></p>
+<p>This show each of the commits you have made, including the comments. As yet, this is all taking place locally in your own workstation. We can confirm this be selecting <code>Team-&gt;Show in Repositories View</code>:</p>
+<p><img alt="" src="img/x21.png"></p>
+<p>The <code>Remotes</code> icon is currently empty.</p>
+<p>Now sign up / sign in to github.com and create a new repository. Call it <code>pacemaker</code>:</p>
+<p><img alt="" src="img/x22.png"></p>
+<p>Click 'Create repository'...</p>
+<p><img alt="" src="img/x23.png"></p>
+<p>In the above screen, locate the 'Quick Setup' panel and select 'HTTPS', Then select the 'Copy to Clipboard' icon (or manually copy/paste) to get the url into the clipboard.</p>
+<p>Back in eclipse, select the <code>Remotes</code> icon on the Repository view and right click:</p>
+<p><img alt="" src="img/x27.png"></p>
+<p>Select 'Create Remote'</p>
+<p>... and something like the following will be displayed:</p>
+<p><img alt="" src="img/x28.png"></p>
+<p>Call the remote 'origin' (which will be the default)</p>
+<p>This screen will be next:</p>
+<p><img alt="" src="img/x29.png"></p>
+<p>Press the 'Change' button, and you will have an opportunity to past in your url. Some of the fields will be pre-populated, you will have to enter others.</p>
+<p><img alt="" src="img/x30.png"></p>
+<p>Make sure the username/password is your github credentials. </p>
+<p>Press 'Finish' and on the next screen Press 'Finish &amp; Push' </p>
+<p><img alt="" src="img/x33.png"></p>
+<p>Your repository should be pushed to github.</p>
+<p>If all has gone to plan, then the 'Git Repositories' view should reveal the new 'origin':</p>
+<p><img alt="" src="img/x31.png"></p>
+<p>And the repository should be available (publicly) on your gitub repo:</p>
+<p><img alt="" src="img/x34.png"></p>
+<p>Explore the repo, and verify that the code has been successfully posted.</p>
+    </div>
     <div class="tab-pane fade" id="Exercises">
       <h1>Exercises</h1>
 <h2>Archive of lab so far:</h2>
@@ -382,12 +415,12 @@ import pim.log.FileLogger;
 </ul>
 <p>Which offers some considerable benefits as a simple representation of data structures. The XML library you used in Step 7 also supports JSON.</p>
 <ul>
-<li><a href="http://xstream.codehaus.org/json-tutorial.html">http://xstream.codehaus.org/json-tutorial.html</a></li>
+<li><a href="http://x-stream.github.io/json-tutorial.html">http://x-stream.github.io/json-tutorial.html</a></li>
 </ul>
-<p>There are only two small changes required to output JSON - which are contained in the first code fragment. The existing xtream jar file will not be sufficient for it to run (although it will compile successful). Following the instructions for incorporating a jar file in step 7, see if you can import these two libraries here:</p>
+<p>There are only two small changes required to output JSON - which are contained in the first code fragment. The existing xstream jar file will not be sufficient for it to run (although it will compile successful). Following the instructions for incorporating a jar file in step 7, see if you can import these two libraries here:</p>
 <ul>
-<li><a href="../archives/jettison-1.3.2.jar">jettison</a></li>
-<li><a href="../archives/stax-1.2.0.jar">stax</a></li>
+<li><a href="http://mvnrepository.com/artifact/org.codehaus.jettison/jettison/1.3.7">jettison</a></li>
+<li><a href="http://mvnrepository.com/artifact/stax/stax/1.2.0">stax</a></li>
 </ul>
 <p>If these are part of the build path, then the xstream component should be able to generate json versions of the data structure.</p>
     </div>
