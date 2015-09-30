@@ -1,0 +1,267 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+<style>
+
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+</style>
+
+<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+      <div class="navbar-brand">
+        <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
+        Introduction to Algorithms
+      </div>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href= "#Assignment-1" data-toggle="tab"> Assignment-1 </a> </li>
+          <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
+          <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
+          <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
+          <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="Assignment-1">
+    <h1>Machine Vision using Union-Find</h1>
+<p>In this assignment you will use the Union-Find algorithm to develop a Java program that can:</p>
+<ul>
+<li>Read in an image file</li>
+<li>Count the number of objects in the image</li>
+<li>Locate and highlight  objects in the image</li>
+<li>Provide full JUnit test coverage </li>
+</ul>
+  </div>
+
+    <div class="tab-pane fade" id="01">
+      <h2>Background</h2>
+<p><a href="https://en.wikipedia.org/wiki/Connected-component_labeling">Connected Component Labeling </a> is a well known approach in image processing and computer vision. It can be used in various applications, for example detecting objects on a conveyor belt or locate characters on a registration plate. The Union-Find algorithms can be used to implement connected component labeling.
+In this assignment you will develop a Java program that can:</p>
+<ul>
+<li>read in an image file</li>
+<li>count the number of "items" in the image</li>
+<li>locate and highlight the items</li>
+<li>provide full test coverage</li>
+</ul>
+<p><img alt="  Registration plate image with characters located using connected component labeling" src="img/irishplate_comp.png"></p>
+<h2>General Requirements</h2>
+<p>You are required to develop a class, ComponentImage, that has the following API:</p>
+<h4>public class ComponentImage</h4>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td>ComponentImage(String fileLocation)</td>
+<td>initialise the ComponentImage using image file location.</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td>countComponents()</td>
+<td>returns number of components in the image</td>
+</tr>
+<tr>
+<td align="left">Picture</td>
+<td>binaryComponentImage()</td>
+<td>creates binary image representation of original image</td>
+</tr>
+<tr>
+<td align="left">Picture</td>
+<td>colourComponentImage()</td>
+<td>creates coloured image representation of original image</td>
+</tr>
+<tr>
+<td align="left">Picture</td>
+<td>highlightComponentImage()</td>
+<td>creates image with Components highlighted by red  box</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>An example of what the output should look like is as follows:</p>
+<p><img alt=" a - original image. b - binaryComponentImage. c - colourComponentImage. d - identifiedComponentImage " src="img/01.png"></p>
+<p><strong>You are required to use an  union-find algorithms</strong> to identify and count the number of items in an image. You MUST conform to the API in the above table - failure to do so will result in a loss of marks. You can use the following <a href="https://drive.google.com/file/d/0BxtnCYpIWp3DWG1QQWxKakQwbkU">starter code</a>  and images if you wish.</p>
+<p>You are recommended to implement the above API in the order that the methods appear. Furthermore, you are requested to follow a Test Driven Development approach, incuding a comprehensive JUnit test with full test coverage. The following steps will give you guidelines to accomplish this.</p>
+    </div>
+    <div class="tab-pane fade" id="02">
+      <h2>Images in Java</h2>
+<h3>Reading in an image to your program</h3>
+<p>The <a href="http://introcs.cs.princeton.edu/java/stdlib/javadoc/Picture.html">Picture</a>  class  is part of the stdlib-package.jar and can be used  to represent most image files (e.g. jpg,bmp) in a Java program. For example, the following code will create a Picture object in your program by reading in a .jpg from the given filename or URL.</p>
+<pre><code>Picture p = new Picture(&quot;C:\some_folder\my_pic.jpg&quot;)
+</code></pre>
+
+<p>Furthermore, the <a href="http://introcs.cs.princeton.edu/java/31datatype/Luminance.java.html">Luminance</a>  class allows us to convert from colour to greyscale. Examples of image processing using these classes can be found <a href="http://introcs.cs.princeton.edu/java/31datatype/">here.</a></p>
+<h3>Binarising an Image</h3>
+<p>Translating an image to a binary form  can be used to find items in an image. For example, if there is enough contrast in colour between items of interest and background then we can choose a threshold value and change all pixel values greater than threshold to white , otherwise set value to black. </p>
+<p><img alt="Binarising a greyscale image." src="img/03.png"> </p>
+    </div>
+    <div class="tab-pane fade" id="03">
+      <h2>Counting Objects</h2>
+<p>All components in a binarised image will have the same pixel values - either black or white. By representing each pixel as a ‘site’ or element in a Union-Find data structure, we can track and count the components in an image by connecting pixels that are beside each other and have the same value. </p>
+<p><img alt="" src="img/02.png"> </p>
+<p>So an approach to use union find would be as follows:</p>
+<ol>
+<li>let n = number of pixels in image</li>
+<li>Create binary version of image</li>
+<li>Create a Union-Find data structure  with N sites</li>
+<li>For each pixel p in the image:
+... check adjacent pixel q 
+... if p.value==q.value
+...... connect p and q  </li>
+</ol>
+    </div>
+    <div class="tab-pane fade" id="04">
+      <h2>Submission and Marking Scheme</h2>
+<h3>Submission</h3>
+<p>Assignment submission must be a zipped Eclipse project via the relevant Moodle assignment link. You must also include the image files you used to test you code. Assignments must be submitted before the deadline. Late submissions will be penalised.  </p>
+<h3>Marking Schema (Tentative)</h3>
+<p>The table below shows a general marking scheme that will be applied to your submission. </p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Feature:</strong></th>
+<th align="left">Coding Style and Conformity to spec.</th>
+<th align="left">Read in Image</th>
+<th align="left">Compute Binary Image</th>
+<th align="left">Application of Union-Find to Image</th>
+<th align="left">Correct Component Count using Union Find</th>
+<th align="left">Coloured Components Image</th>
+<th align="left">Highlight Components</th>
+<th align="left">Testing and Test Coverage</th>
+<th align="left">Advanced Features (e.g. GUI)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>Marks:</strong></td>
+<td align="left">5</td>
+<td align="left">5</td>
+<td align="left">15</td>
+<td align="left">15</td>
+<td align="left">5</td>
+<td align="left">15</td>
+<td align="left">10</td>
+<td align="left">15</td>
+<td align="left">15</td>
+</tr>
+</tbody>
+</table>
+    </div>
+</div>
+<br> <br>
+
+
+    </div>
+
+
+<div class="credits navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <small>
+    Prepared by Frank Walsh (fwwalsh@wit.ie) & Eamonn De Leastar (edeleastar@wit.ie)
+. Except where otherwise noted, this content is licensed under a
+    <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+        target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+    </a>
+    </small>
+</div>    <script>
+
+$(document).ready(function()
+{
+  $("img").addClass ("img-responsive");
+
+  $(".tab-content img").each(function()
+  {
+    var title = this.alt;
+    $(this).after('<figcaption class="caption"> <em>'+ title +'</em></figcaption>');
+  });
+})    </script>
+
+  </body>
+ </html>
