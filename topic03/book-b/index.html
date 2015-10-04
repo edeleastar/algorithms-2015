@@ -7,11 +7,12 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
 
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
@@ -45,7 +46,7 @@ figcaption
 
   <body>
 
-    <div class="container">
+  <div class="ui container">
 <style>
 
 
@@ -80,40 +81,49 @@ h3
 
 </style>
 
-<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
-      <div class="navbar-brand">
-        <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
-        Test Driven Development
-      </div>
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Test Driven Development
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="TDD-02">
+        TDD-02
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+      <a class="item" data-tab="05">
+        05
+      </a>
+      <a class="item" data-tab="06">
+        06
+      </a>
+      <a class="item" data-tab="Archive">
+        Archive
+      </a>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href= "#TDD-02" data-toggle="tab"> TDD-02 </a> </li>
-          <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
-          <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
-          <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
-          <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
-          <li><a href= "#05" data-toggle="tab"> 05 </a> </li>
-          <li><a href= "#06" data-toggle="tab"> 06 </a> </li>
-          <li><a href= "#Archive" data-toggle="tab"> Archive </a> </li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <br><br>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="TDD-02">
+  <div  class="ui tab segment lab" data-tab="TDD-02">
     <h1>Objectives</h1>
 <p>Evolve the application developed in lab01 with additional capabilities</p>
   </div>
-
-    <div class="tab-pane fade" id="01">
-      <h1>Setup</h1>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Setup</h1>
 <p>You should have a project from lab01 looking something like this:</p>
 <p><img alt="" src="./img/00.png"></p>
 <p>This is an archive of the project if you dont have it completed:</p>
@@ -121,9 +131,9 @@ h3
 <li><a href="./archives/pacemaker-lab01.zip">pacemaker-lab01.zip</a></li>
 </ul>
 <p>Make sure you can import the application into eclipse and run it</p>
-    </div>
-    <div class="tab-pane fade" id="02">
-      <h1>Guava Library</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>Guava Library</h1>
 <p>Download the latest version of this library here:</p>
 <ul>
 <li><a href="https://github.com/google/guava">https://github.com/google/guava</a></li>
@@ -134,9 +144,9 @@ h3
 </ul>
 <p>Download the <code>guava-18.0.jar</code> file featured prominently in the above. Drag and drop the file to the <code>lib</code> file of your pacemaker project and add it to the build path. Your project should look like this:</p>
 <p><img alt="" src="img/04.png"></p>
-    </div>
-    <div class="tab-pane fade" id="03">
-      <h1>PacemakerAPI</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>PacemakerAPI</h1>
 <p>In the controllers package, create new class called "PacemakerAPI", containing the following:</p>
 <pre><code class="java">package controllers;
 
@@ -220,9 +230,9 @@ public class Main
 <p>Run the application now - the output on the console should be something like this:</p>
 <pre><code>[models.User@15db9742, models.User@6d06d69c, models.User@7852e922]
 </code></pre>
-    </div>
-    <div class="tab-pane fade" id="04">
-      <h1>toString</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>toString</h1>
 <p>The console display of the User objects, which appear as some sort of memory address. We can fix this my introducing a 'toString' method into the User class:</p>
 <pre><code class="java">  public String toString()
   {
@@ -265,9 +275,9 @@ public class Main
 <p><img alt="" src="img/05.png"></p>
 <p>Then select <code>Push to upstream</code> from the Team menu to upload your changes to github. Make that the github repo contains the new additions (by browsing on github to the source code). </p>
 <p>Dont proceed to the next step until you have verified that the git push is operating correctly.</p>
-    </div>
-    <div class="tab-pane fade" id="05">
-      <h1>Upgrade PacemakerAPI</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="05">
+    <h1>Upgrade PacemakerAPI</h1>
 <p>PacemakerAPI currently uses a List data structure. It might make sense to rework this to use a Map - keyed on the email address.</p>
 <p>First, redefine the users collection in PacemakerAPI to be a map:</p>
 <pre><code class="java">  private Map&lt;String, User&gt; users = new HashMap&lt;String, User&gt;();
@@ -363,9 +373,9 @@ Verify that the app works as expected.</p>
 </code></pre>
 
 <p>When everything is compiling and running correctly, commit all changes with a suitable message and push to github.</p>
-    </div>
-    <div class="tab-pane fade" id="06">
-      <h1>IDs</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="06">
+    <h1>IDs</h1>
 <p>We might wish to use IDs in addition to emails when referencing out users. The User class can be extended to include these attributes:</p>
 <pre><code class="java">public class User 
 {
@@ -444,39 +454,53 @@ Verify that the app works as expected.</p>
 </code></pre>
 
 <p>When everything is compiling and running correctly, commit all changes with a suitable message and push to github.</p>
-    </div>
-    <div class="tab-pane fade" id="Archive">
-      <h1>Archive</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="Archive">
+    <h1>Archive</h1>
 <h2>Archive of project so far...</h2>
 <ul>
 <li><a href="./archives/pacemaker-lab01.zip">pacemaker-lab02.zip</a></li>
 </ul>
-    </div>
-</div>
-<br> <br>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
 
 
-    </div>
 
-
-<div class="credits navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <small>
-    Prepared by Frank Walsh (fwwalsh@wit.ie) & Eamonn De Leastar (edeleastar@wit.ie)
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Frank Walsh (fwwalsh@wit.ie) & Eamonn De Leastar (edeleastar@wit.ie)
 . Except where otherwise noted, this content is licensed under a
-    <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-        target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-    </a>
-    </small>
-</div>    <script>
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>    <script>
 
 $(document).ready(function()
 {
-  $("img").addClass ("img-responsive");
+  $("img").addClass ("ui image");
 
-  $(".tab-content img").each(function()
-  {
-    var title = this.alt;
-    $(this).after('<figcaption class="caption"> <em>'+ title +'</em></figcaption>');
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
   });
 })    </script>
 

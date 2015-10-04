@@ -7,11 +7,12 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
 
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
@@ -45,7 +46,7 @@ figcaption
 
   <body>
 
-    <div class="container">
+  <div class="ui container">
 <style>
 
 
@@ -80,40 +81,49 @@ h3
 
 </style>
 
-<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
-      <div class="navbar-brand">
-        <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
-        Test Driven Development
-      </div>
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Test Driven Development
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="TDD-01">
+        TDD-01
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+      <a class="item" data-tab="05">
+        05
+      </a>
+      <a class="item" data-tab="06">
+        06
+      </a>
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href= "#TDD-01" data-toggle="tab"> TDD-01 </a> </li>
-          <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
-          <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
-          <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
-          <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
-          <li><a href= "#05" data-toggle="tab"> 05 </a> </li>
-          <li><a href= "#06" data-toggle="tab"> 06 </a> </li>
-          <li><a href= "#Exercises" data-toggle="tab"> Exercises </a> </li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <br><br>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="TDD-01">
+  <div  class="ui tab segment lab" data-tab="TDD-01">
     <h1>Objectives</h1>
 <p>The objective of this lab set up a simple command line app to be used as a foundation for exploring TDD in subsequent labs</p>
   </div>
-
-    <div class="tab-pane fade" id="01">
-      <h1>Pacemaker Version 1</h1>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Pacemaker Version 1</h1>
 <p>Create a new project - select 'File-&gt;New-&gt;Project'  select "Java Project". Fill out the "New Java Project" wizard as shown:</p>
 <p><img alt="" src="img/51.png"></p>
 <p>Press "Finish".  In the new project, select 'src', right click and select 'new-&gt;package'. Call the package 'models' and press finish:</p>
@@ -169,9 +179,9 @@ public class Main
 <p><img alt="" src="img/56.png"></p>
 <p>Launch the application as follows. Do this by selecting "Main.java" in the Package Explorer and select "Run-&gt;Run As-&gt;Java Application". This executes the application (running main) which in turn prints output to the console.</p>
 <p><img alt="" src="img/57.png"></p>
-    </div>
-    <div class="tab-pane fade" id="02">
-      <h1>Debugger</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>Debugger</h1>
 <p>Now explore the "users" data structure in the debugger: Editing the Main.java source file, double click inside the scroll bar on first line of the main method:</p>
 <p><img alt="" src="img/58.png"></p>
 <p>This creates a breakpoint (visually a small blue bubble). Run the program again: - this time under the debugger. Quickest way to do this is to press the "Debug last launched" button.</p>
@@ -192,9 +202,9 @@ public class Main
 <p>... and the restore the Java "Perspective":</p>
 <p><img alt="" src="img/56.png"></p>
 <p>If you are not familiar with debugging in eclipse, spend some time repeating the above steps. In particular, hover over the various tool bar buttons visible in the debug perspective to get an general understanding of how to control and explore a running application.</p>
-    </div>
-    <div class="tab-pane fade" id="03">
-      <h2>Git Version Control</h2>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h2>Git Version Control</h2>
 <p>Before moving on to the next step - we will commit this project to 'git' version control.</p>
 <p>First, right click on the project and select 'Team-&gt;Share Project'</p>
 <p><img alt="" src="img/x01.png"></p>
@@ -216,9 +226,9 @@ public class Main
 <p>Press "Commit" - and now the icons will change again:</p>
 <p><img alt="" src="img/x09.png"></p>
 <p>Although we haven't saved this to any external server, we have preserved the applications current structure.</p>
-    </div>
-    <div class="tab-pane fade" id="04">
-      <h1>Logger</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>Logger</h1>
 <p>Create a new package in the eclipse project, called 'utils'</p>
 <p><img alt="" src="img/x10.png"></p>
 <p>Introduce the following class into that package:</p>
@@ -301,9 +311,9 @@ public class FileLogger
 <p>Fill out as shown above (not we do not commit the log file) - and press 'Commit'</p>
 <p>Notice the changes in the package explorer icons:</p>
 <p><img alt="" src="img/x16.png"></p>
-    </div>
-    <div class="tab-pane fade" id="05">
-      <h1>XStream</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="05">
+    <h1>XStream</h1>
 <p>Navigate to </p>
 <ul>
 <li><a href="http://x-stream.github.io/">http://x-stream.github.io/</a></li>
@@ -355,9 +365,9 @@ import pim.log.FileLogger;
 <p><img alt="" src="img/x19.png"></p>
 <p>We have used a component (xstream) to convert an internal data structure into an XML stream, which we have written to a file.</p>
 <p>See if you can commit the changes we have just made to git.</p>
-    </div>
-    <div class="tab-pane fade" id="06">
-      <h1>Git</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="06">
+    <h1>Git</h1>
 <p>If you have been committing your project to git during this lab, you should be able to select <code>Team-&gt;Show in History</code>:</p>
 <p><img alt="" src="img/x20.png"></p>
 <p>This show each of the commits you have made, including the comments. As yet, this is all taking place locally in your own workstation. We can confirm this be selecting <code>Team-&gt;Show in Repositories View</code>:</p>
@@ -387,9 +397,9 @@ import pim.log.FileLogger;
 <p>And the repository should be available (publicly) on your gitub repo:</p>
 <p><img alt="" src="img/x34.png"></p>
 <p>Explore the repo, and verify that the code has been successfully posted.</p>
-    </div>
-    <div class="tab-pane fade" id="Exercises">
-      <h1>Exercises</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="Exercises">
+    <h1>Exercises</h1>
 <h2>Archive of lab so far:</h2>
 <ul>
 <li><a href="https://github.com/edeleastar/pacemaker">https://github.com/edeleastar/pacemaker</a></li>
@@ -419,32 +429,46 @@ import pim.log.FileLogger;
 <li><a href="http://mvnrepository.com/artifact/stax/stax/1.2.0">stax</a></li>
 </ul>
 <p>If these are part of the build path, then the xstream component should be able to generate json versions of the data structure.</p>
-    </div>
-</div>
-<br> <br>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
 
 
-    </div>
 
-
-<div class="credits navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <small>
-    Prepared by Frank Walsh (fwwalsh@wit.ie) & Eamonn De Leastar (edeleastar@wit.ie)
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Frank Walsh (fwwalsh@wit.ie) & Eamonn De Leastar (edeleastar@wit.ie)
 . Except where otherwise noted, this content is licensed under a
-    <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-        target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-    </a>
-    </small>
-</div>    <script>
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>    <script>
 
 $(document).ready(function()
 {
-  $("img").addClass ("img-responsive");
+  $("img").addClass ("ui image");
 
-  $(".tab-content img").each(function()
-  {
-    var title = this.alt;
-    $(this).after('<figcaption class="caption"> <em>'+ title +'</em></figcaption>');
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
   });
 })    </script>
 

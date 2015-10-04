@@ -7,11 +7,12 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
 
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
@@ -45,7 +46,7 @@ figcaption
 
   <body>
 
-    <div class="container">
+  <div class="ui container">
 <style>
 
 
@@ -80,31 +81,35 @@ h3
 
 </style>
 
-<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
-      <div class="navbar-brand">
-        <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
-        Introduction to Algorithms
-      </div>
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Introduction to Algorithms
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Assignment-1">
+        Assignment-1
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href= "#Assignment-1" data-toggle="tab"> Assignment-1 </a> </li>
-          <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
-          <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
-          <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
-          <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <br><br>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="Assignment-1">
+  <div  class="ui tab segment lab" data-tab="Assignment-1">
     <h1>Machine Vision using Union-Find</h1>
 <p>In this assignment you will use the Union-Find algorithm to develop a Java program that can:</p>
 <ul>
@@ -114,9 +119,8 @@ h3
 <li>Provide full JUnit test coverage </li>
 </ul>
   </div>
-
-    <div class="tab-pane fade" id="01">
-      <h2>Background</h2>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h2>Background</h2>
 <p><a href="https://en.wikipedia.org/wiki/Connected-component_labeling">Connected Component Labeling </a> is a well known approach in image processing and computer vision. It can be used in various applications, for example detecting objects on a conveyor belt or locate characters on a registration plate. The Union-Find algorithms can be used to implement connected component labeling.
 In this assignment you will develop a Java program that can:</p>
 <ul>
@@ -170,9 +174,9 @@ In this assignment you will develop a Java program that can:</p>
 <p><img alt=" a - original image. b - binaryComponentImage. c - colourComponentImage. d - identifiedComponentImage " src="img/01.png"></p>
 <p><strong>You are required to use an  union-find algorithms</strong> to identify and count the number of items in an image. You MUST conform to the API in the above table - failure to do so will result in a loss of marks. You can use the following <a href="https://drive.google.com/file/d/0BxtnCYpIWp3DWG1QQWxKakQwbkU">starter code</a>  and images if you wish.</p>
 <p>You are recommended to implement the above API in the order that the methods appear. Furthermore, you are requested to follow a Test Driven Development approach, incuding a comprehensive JUnit test with full test coverage. The following steps will give you guidelines to accomplish this.</p>
-    </div>
-    <div class="tab-pane fade" id="02">
-      <h2>Images in Java</h2>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h2>Images in Java</h2>
 <h3>Reading in an image to your program</h3>
 <p>The <a href="http://introcs.cs.princeton.edu/java/stdlib/javadoc/Picture.html">Picture</a>  class  is part of the stdlib-package.jar and can be used  to represent most image files (e.g. jpg,bmp) in a Java program. For example, the following code will create a Picture object in your program by reading in a .jpg from the given filename or URL.</p>
 <pre><code>Picture p = new Picture(&quot;C:\some_folder\my_pic.jpg&quot;)
@@ -182,9 +186,9 @@ In this assignment you will develop a Java program that can:</p>
 <h3>Binarising an Image</h3>
 <p>Translating an image to a binary form  can be used to find items in an image. For example, if there is enough contrast in colour between items of interest and background then we can choose a threshold value and change all pixel values greater than threshold to white , otherwise set value to black. </p>
 <p><img alt="Binarising a greyscale image." src="img/03.png"> </p>
-    </div>
-    <div class="tab-pane fade" id="03">
-      <h2>Counting Objects</h2>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h2>Counting Objects</h2>
 <p>All components in a binarised image will have the same pixel values - either black or white. By representing each pixel as a ‘site’ or element in a Union-Find data structure, we can track and count the components in an image by connecting pixels that are beside each other and have the same value. </p>
 <p><img alt="" src="img/02.png"> </p>
 <p>So an approach to use union find would be as follows:</p>
@@ -197,9 +201,9 @@ In this assignment you will develop a Java program that can:</p>
 ... if p.value==q.value
 ...... connect p and q  </li>
 </ol>
-    </div>
-    <div class="tab-pane fade" id="04">
-      <h2>Submission and Marking Scheme</h2>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h2>Submission and Marking Scheme</h2>
 <h3>Submission</h3>
 <p>Assignment submission must be a zipped Eclipse project via the relevant Moodle assignment link. You must also include the image files you used to test you code. Assignments must be submitted before the deadline. Late submissions will be penalised.  </p>
 <h3>Marking Schema (Tentative)</h3>
@@ -234,32 +238,46 @@ In this assignment you will develop a Java program that can:</p>
 </tr>
 </tbody>
 </table>
-    </div>
-</div>
-<br> <br>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
 
 
-    </div>
 
-
-<div class="credits navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <small>
-    Prepared by Frank Walsh (fwwalsh@wit.ie) & Eamonn De Leastar (edeleastar@wit.ie)
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Frank Walsh (fwwalsh@wit.ie) & Eamonn De Leastar (edeleastar@wit.ie)
 . Except where otherwise noted, this content is licensed under a
-    <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-        target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-    </a>
-    </small>
-</div>    <script>
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>    <script>
 
 $(document).ready(function()
 {
-  $("img").addClass ("img-responsive");
+  $("img").addClass ("ui image");
 
-  $(".tab-content img").each(function()
-  {
-    var title = this.alt;
-    $(this).after('<figcaption class="caption"> <em>'+ title +'</em></figcaption>');
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
   });
 })    </script>
 

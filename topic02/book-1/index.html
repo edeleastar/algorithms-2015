@@ -7,11 +7,12 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
 
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
@@ -45,7 +46,7 @@ figcaption
 
   <body>
 
-    <div class="container">
+  <div class="ui container">
 <style>
 
 
@@ -80,31 +81,35 @@ h3
 
 </style>
 
-<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
-      <div class="navbar-brand">
-        <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
-        Introduction to Algorithms
-      </div>
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Introduction to Algorithms
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-04">
+        Lab-04
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href= "#Lab-04" data-toggle="tab"> Lab-04 </a> </li>
-          <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
-          <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
-          <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
-          <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <br><br>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="Lab-04">
+  <div  class="ui tab segment lab" data-tab="Lab-04">
     <h1>Lab 4 - Union-Find</h1>
 <p>On competing the lab you will:</p>
 <ul>
@@ -114,9 +119,8 @@ h3
 <li>Modify union-find implementation to include path compression.</li>
 </ul>
   </div>
-
-    <div class="tab-pane fade" id="01">
-      <h1>Eclipse: Implement Union Find</h1>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Eclipse: Implement Union Find</h1>
 <p>Develop classes <strong>QuickFindUF, QuickUnionUF</strong> and <strong>WeightedQuickUnionUF</strong> that implement quick-find, quick-union and weighted quick-union respectively. All classes will have the following API:
 <img alt="" src="img/00.png"> </p>
 <h3>Create Eclipse Project</h3>
@@ -183,9 +187,9 @@ public class QuickFindUF {
     }
 }
 </code></pre>
-    </div>
-    <div class="tab-pane fade" id="02">
-      <h1>Eclipse: Union Find Exercises</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>Eclipse: Union Find Exercises</h1>
 <p>You should do the following exercises by hand using paper and pencil. Then, confirm your answer for the id[] array using the result from exercise 1(You can use Eclipse Debugging to view the id[] array values or just print the values to the console). The number of ‘sites’ for each question is 10 (i.e. the size of the id[] array,N = 10) </p>
 <ol>
 <li>Show the contents of the id[] array and the number of components for each input pair when you use quick-find for the sequence:
@@ -216,9 +220,9 @@ public class QuickFindUF {
 
     }
 </code></pre>
-    </div>
-    <div class="tab-pane fade" id="03">
-      <h1>Eclipse: Create JUnit Test</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>Eclipse: Create JUnit Test</h1>
 <p>In this section of the lab you will create a test case that checks the functionality of the classes you created so far.</p>
 <h4>Create QuickFindUFTest</h4>
 <ol>
@@ -283,37 +287,51 @@ public class QuickFindUF {
 <p>In the <em>Package Explorer</em> view, right click on the  QuickFindUFTest and select <strong>Run as -&gt; Junit Test</strong>. This will run your test case and open the JUnit view with the results. All going well it should look like this:
 <img alt="" src="img/unittest2.png"> </p>
 <p>Now, create tests for the other union find classes (Quick Find, Weighted Quick Find).</p>
-    </div>
-    <div class="tab-pane fade" id="04">
-      <h1>Path Compression</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>Path Compression</h1>
 <p>Modify QuickUnionUF.java from exercise 1 to include path compression, by adding a loop to find() that links every site on the path from p to the root. Give a sequence of input pairs that causes this method to produce a path of length 4. 
 Remember from Class: the cost per operation for this algorithm is known to be logarithmic.</p>
-    </div>
-</div>
-<br> <br>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
 
 
-    </div>
 
-
-<div class="credits navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <small>
-    Prepared by Frank Walsh (fwwalsh@wit.ie) & Eamonn De Leastar (edeleastar@wit.ie)
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Frank Walsh (fwwalsh@wit.ie) & Eamonn De Leastar (edeleastar@wit.ie)
 . Except where otherwise noted, this content is licensed under a
-    <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-        target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-    </a>
-    </small>
-</div>    <script>
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>    <script>
 
 $(document).ready(function()
 {
-  $("img").addClass ("img-responsive");
+  $("img").addClass ("ui image");
 
-  $(".tab-content img").each(function()
-  {
-    var title = this.alt;
-    $(this).after('<figcaption class="caption"> <em>'+ title +'</em></figcaption>');
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
   });
 })    </script>
 

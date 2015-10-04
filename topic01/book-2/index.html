@@ -7,11 +7,12 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
 
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
@@ -45,7 +46,7 @@ figcaption
 
   <body>
 
-    <div class="container">
+  <div class="ui container">
 <style>
 
 
@@ -80,34 +81,44 @@ h3
 
 </style>
 
-<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
-      <div class="navbar-brand">
-        <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
-        Classes, Interfaces & Objects
-      </div>
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Classes, Interfaces & Objects
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-02">
+        Lab-02
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+      <a class="item" data-tab="05">
+        05
+      </a>
+      <a class="item" data-tab="06">
+        06
+      </a>
+      <a class="item" data-tab="Exercise">
+        Exercise
+      </a>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href= "#Lab-02" data-toggle="tab"> Lab-02 </a> </li>
-          <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
-          <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
-          <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
-          <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
-          <li><a href= "#05" data-toggle="tab"> 05 </a> </li>
-          <li><a href= "#06" data-toggle="tab"> 06 </a> </li>
-          <li><a href= "#Exercise" data-toggle="tab"> Exercise </a> </li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <br><br>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="Lab-02">
+  <div  class="ui tab segment lab" data-tab="Lab-02">
     <h1>Debugging in Eclipse</h1>
 <ul>
 <li>Understand workspaces in Eclipse</li>
@@ -118,9 +129,8 @@ h3
 <li>View variable values</li>
 </ul>
   </div>
-
-    <div class="tab-pane fade" id="01">
-      <h1>Sample Program</h1>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Sample Program</h1>
 <p>Create a new project called Lab2.</p>
 <p>Put the following sample program into the Lab2 source folder.</p>
 <pre><code>package algorithms;
@@ -157,15 +167,15 @@ public class SampleProgram {
 <p>The Sample Program uses the class and interface you created in the previous lab. To include them on your build path, right-click on Lab2 in the Package Explorer and select <code>Build Path -&gt; Configure Build Path.</code></p>
 <p>Select the Project tab and add lab01 as shown below. Now your code should compile correctly.(you need to have lab02 complete)</p>
 <p><img alt="" src="img/00.png"></p>
-    </div>
-    <div class="tab-pane fade" id="02">
-      <h1>The Debug Perspective</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>The Debug Perspective</h1>
 <p>Switch to the debug perspective by clicking on the  icon in the top-right corner of the Eclipse window.</p>
 <p>Select Debug from the list of perspectives.</p>
 <p><img alt="" src="img/01.png"></p>
-    </div>
-    <div class="tab-pane fade" id="03">
-      <h1>Suspending, Resuming and Terminating</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>Suspending, Resuming and Terminating</h1>
 <p>Return to the Java perspective and open SampleProgram.java in the program editor</p>
 <p>Select <code>Run-&gt;Debug as-&gt;Java Application</code></p>
 <p>You should see the program printing to the console:</p>
@@ -174,9 +184,9 @@ public class SampleProgram {
 <p>While the program is running, switch to the Debug Perspective. Find the Resume, Suspend and Terminate button in the toolbar.</p>
 <p>Click on Suspend (the yellow vertical lines) and Resume (yellow bar and green triangle) to suspend and resume program execution. Observe what happens. </p>
 <p>Finally, click the Terminate button(red square) to stop execution.</p>
-    </div>
-    <div class="tab-pane fade" id="04">
-      <h1>Break Points</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>Break Points</h1>
 <p>You can use break points to suspend execution at a particular line in your code. Set a break point by double clicking in the grey bar beside the first call to System.out.println as shown below.</p>
 <p><img alt="" src="img/03.pmg"></p>
 <p>Run the program in Debug as before. Execution will automatically suspend just before the breakpoint you have set.</p>
@@ -188,9 +198,9 @@ public class SampleProgram {
 <p>Use the breakpoint window to disable the second break point in innerloop(..) by unchecking the option.</p>
 <p><img alt="" src="img/05.png"></p>
 <p>Now resume the program again. You should now notice this checkpoint is ignored.</p>
-    </div>
-    <div class="tab-pane fade" id="05">
-      <h1>Stepping through code</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="05">
+    <h1>Stepping through code</h1>
 <p>You may want more control over the execution of a program to really understand what’s going on in the code.</p>
 <p>Terminate your program if it is still running</p>
 <p>Re-activate the breakpoint in the innerloop() method and run the program in Debug mode again. 
@@ -208,18 +218,18 @@ When the program suspends at the first break point, find the following buttons:<
 <ul>
 <li>try this out by returning from the innerloop() method</li>
 </ul>
-    </div>
-    <div class="tab-pane fade" id="06">
-      <h1>Variables</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="06">
+    <h1>Variables</h1>
 <p>As before, run the program in debug mode and use Step Over to bring execution to the innerloop(...) method call.</p>
 <p>Move the mouse pointer over one of the variables. It’s current value will be shown in a pop-up window</p>
 <p><img alt="" src="img/07.png"></p>
 <p>Also, current variable values are shown in the variables window in the top right of the Debug perspective</p>
 <p><img alt="" src="img/08.png"></p>
 <p>Step into the innerloop() method and monitor the changes to i and j as you step through the code </p>
-    </div>
-    <div class="tab-pane fade" id="Exercise">
-      <h1>Debug Practice</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="Exercise">
+    <h1>Debug Practice</h1>
 <p>Include this class here into your project:</p>
 <pre><code>package algorithms;
 
@@ -258,32 +268,46 @@ public class BuggyStringReverse {
 
 <p>The program takes a string as input and reverses it (i.e. “banana” should return “ananab”). </p>
 <p>However it does not work. Confirm this by running it in Eclipse. Then use the debugger to find the problem and fix it.</p>
-    </div>
-</div>
-<br> <br>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
 
 
-    </div>
 
-
-<div class="credits navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <small>
-    Prepared by Frank Walsh (fwwalsh@wit.ie) & Eamonn De Leastar (edeleastar@wit.ie)
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Frank Walsh (fwwalsh@wit.ie) & Eamonn De Leastar (edeleastar@wit.ie)
 . Except where otherwise noted, this content is licensed under a
-    <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-        target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-    </a>
-    </small>
-</div>    <script>
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>    <script>
 
 $(document).ready(function()
 {
-  $("img").addClass ("img-responsive");
+  $("img").addClass ("ui image");
 
-  $(".tab-content img").each(function()
-  {
-    var title = this.alt;
-    $(this).after('<figcaption class="caption"> <em>'+ title +'</em></figcaption>');
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
   });
 })    </script>
 
