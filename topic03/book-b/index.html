@@ -110,6 +110,9 @@ h3
       <a class="item" data-tab="06">
         06
       </a>
+      <a class="item" data-tab="07">
+        07
+      </a>
       <a class="item" data-tab="Archive">
         Archive
       </a>
@@ -455,11 +458,76 @@ Verify that the app works as expected.</p>
 
 <p>When everything is compiling and running correctly, commit all changes with a suitable message and push to github.</p>
   </div>
+  <div  class="ui tab segment lab" data-tab="07">
+    <h1>User Tests</h1>
+<p>Create a new '<code>Source Folder</code> in your project called <code>test</code>:</p>
+<p><img alt="" src="img/06.png"></p>
+<pre><code>package models;
+
+import static org.junit.Assert.*;
+
+import java.util.HashSet;
+import java.util.Set;
+import org.junit.Test;
+
+import static models.Fixtures.users;
+
+public class UserTest
+{
+  User homer = new User (&quot;homer&quot;, &quot;simpson&quot;, &quot;homer@simpson.com&quot;,  &quot;secret&quot;);
+
+  @Test
+  public void testCreate()
+  {
+    assertEquals (&quot;homer&quot;,               homer.firstName);
+    assertEquals (&quot;simpson&quot;,             homer.lastName);
+    assertEquals (&quot;homer@simpson.com&quot;,   homer.email);   
+    assertEquals (&quot;secret&quot;,              homer.password);   
+  }
+
+  @Test
+  public void testIds()
+  {
+    Set&lt;Long&gt; ids = new HashSet&lt;&gt;();
+    for (User user : users)
+    {
+      ids.add(user.id);
+    }
+    assertEquals (users.length, ids.size());
+  }
+
+  @Test
+  public void testToString()
+  {
+    assertEquals (&quot;User{&quot; + homer.id + &quot;, homer, simpson, secret, homer@simpson.com}&quot;, homer.toString());
+  }
+}
+</code></pre>
+
+<p>When you bring in this class, it will not compile due to missing libraries. Figure out how to add these now one way or another. Eclipse might prompt with this auto-fixup dialog:</p>
+<p><img alt="" src="img/07.png"></p>
+<p>It will still not compile - as we are missing the fixtures:</p>
+<pre><code>package models;
+
+public class Fixtures
+{
+  public static User[] users =
+  {
+    new User (&quot;marge&quot;, &quot;simpson&quot;, &quot;marge@simpson.com&quot;,  &quot;secret&quot;),
+    new User (&quot;lisa&quot;,  &quot;simpson&quot;, &quot;lisa@simpson.com&quot;,   &quot;secret&quot;),
+    new User (&quot;bart&quot;,  &quot;simpson&quot;, &quot;bart@simpson.com&quot;,   &quot;secret&quot;),
+    new User (&quot;maggie&quot;,&quot;simpson&quot;, &quot;maggie@simpson.com&quot;, &quot;secret&quot;)
+  };
+}
+</code></pre>
+
+<p>The tests should run now - but one of them is failing. Can you fix it?</p>
+  </div>
   <div  class="ui tab segment lab" data-tab="Archive">
     <h1>Archive</h1>
 <h2>Archive of project so far...</h2>
 <ul>
-<li><a href="./archives/pacemaker-lab01.zip">pacemaker-lab02.zip</a></li>
+<li><a href="https://github.com/wit-computing/algorithms-2015-pacemaker">https://github.com/wit-computing/algorithms-2015-pacemaker</a></li>
 </ul>
   </div>
 <script>
