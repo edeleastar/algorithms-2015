@@ -98,6 +98,12 @@ h3
       <a class="item" data-tab="02">
         02
       </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
     </div>
 </div>
 
@@ -221,8 +227,118 @@ The following are instructions for MS Excel:
 <img alt="" src="img/04.png"> 
 - You can now use the equation as the basis for your hypothesis for predicting running time of you algorithm. remember the power depends on the algorithm, the coefficient depends on the hardware, software etc. of the machine. </p>
 <h4></h4>
+<h3>Hypothesis</h3>
+<p>Using the equation from the last section, predict the running time for an array of size 50,000. Then, run an experiment using your program to validate if your hypothesis is correct. It wont be exactly the same but should be close if your hypothesis is correct.</p>
+<h2>Birthday Problem</h2>
+<p>How likely is it that, in a group of N people, at least 2 of them have the same birthday? Write a program that takes an integer N from the command line and generates a random sequence of integers between 0 and N – 1. Run experiments to validate the hypothesis that the number of integers generated before the first repeated value is found is $$sqrt(pi N/2)$$</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h2>Make Some Observations</h2>
+<p>Now run the program for different size inputs. It's a good idea to plan your experiment. start with a size of 10,000 and double the input size for each subsequent run.  Complete the following table with the running times. </p>
+<table>
+<thead>
+<tr>
+<th>N</th>
+<th align="center">Time (seconds)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10000</td>
+<td align="center">?</td>
+</tr>
+<tr>
+<td>20000</td>
+<td align="center">?</td>
+</tr>
+<tr>
+<td>40000</td>
+<td align="center">?</td>
+</tr>
+<tr>
+<td>80000</td>
+<td align="center">?</td>
+</tr>
+<tr>
+<td>160000</td>
+<td align="center">?</td>
+</tr>
+<tr>
+<td>320000</td>
+<td align="center">?</td>
+</tr>
+</tbody>
+</table>
+<h2>Analyse the data</h2>
+<p>For this part you may want to use a spreadsheet application. Enter your recorded data into a spreadsheet  and use the charting tool to plot the result. 
+The following are instructions for MS Excel:
+- Enter your data in a new blank spreadsheet
+<img alt="" src="img/01.png"> 
+- Now get the log values of the data. In the cell enter the following formula <code>=log(A1, 2)</code> where the first argument  is the cell containing to the 1st input size value (N) and the second argument is the base (i.e. base 2)
+<img alt="" src="img/02.png"> 
+- You can use the charting tool to "fit" an equation to the data. Select the data an click Insert-&gt;Scatter Chart
+<img alt="" src="img/03.png"> 
+- Select/click on the data points and right cligk to bring up a menu. Select "inset Tr4end line. We want to use the Power law so select power as the regression/line type. Also, select "show equation". You may need to look up the help option in the spreadsheet appication you're using. You should end up with something resembling the  following:
+<img alt="" src="img/04.png"> 
+- You can now use the equation as the basis for your hypothesis for predicting running time of you algorithm. remember the power depends on the algorithm, the coefficient depends on the hardware, software etc. of the machine. </p>
+<h4></h4>
 <h2>Hypothesis</h2>
 <p>Using the equation from the last section, predict the running time for an array of size 50,000. Then, run an experiment using your program to validate if your hypothesis is correct. It wont be exactly the same but should be close if your hypothesis is correct. </p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h2>Analytical Analysis</h2>
+<p>The following exercised will help you learn how to analyse your programs and code:</p>
+<h4>Initial Analysis</h4>
+<p>For each of the following algorithms, indicate:
+a) a natural size metric for its inputs; 
+b) its basic operation; 
+c) whether the basic operation count can be different for inputs of the same size.</p>
+<ul>
+<li>search for a key K in a list of n numbers</li>
+<li>computing the sum of n numbers</li>
+<li>computing n!(Factorial of n)</li>
+<li>finding the largest element in a list of n numbers</li>
+</ul>
+<h4>Mathematical Models and Tilda Notation</h4>
+<p>Refer to the code used previously in this lab:</p>
+<pre><code>    public static int[] doSort(int[] a){
+
+        for (int i = 0; i &lt; a.length - 1; i++)
+        {
+            int index = i;
+            for (int j = i + 1; j &lt; a.length; j++)
+                if (a[j] &lt; a[index])
+                    index = j;
+
+            int smallerNumber = a[index]; 
+            a[index] = a[i];
+            a[i] = smallerNumber;
+        }
+        return a;
+    }
+</code></pre>
+
+<ul>
+<li>What is the problem size for this algorithm?</li>
+<li>Identify the "basic operation" in the algorithm. Remember from lectures, a basic operation is usually in the inner loop that runs the most number of times. </li>
+<li>Define a cost model that includes the basic operation(hint: number of array accesses). This should take the form C(N) = ...). </li>
+<li>Use tilda notation to simlpify the cost model.</li>
+</ul>
+<p><strong>Tilda Notation</strong></p>
+<p>Use tilda notation to simlify the following:</p>
+<p>a. $$N + 1$$
+d. $$2N^3  + 15 N 2 + N$$
+b. $$1 + 1/N$$
+c. $$(1 + 1/N )(1 + 2/N )$$
+e. $$lg(2N )/lg N$$</p>
+<h2>Creative Exercises</h2>
+<p><strong>Throwing eggs from a building:</strong> Suppose that you have an N-story building and
+plenty of eggs. Suppose also that an egg is broken if it is thrown off floor F or higher,
+and unhurt otherwise. Devise a strategy to determine the value of F such that the
+number of broken eggs is ~lg N when using ~lg N throws, then find a way to reduce the
+cost to ~2lg F.</p>
   </div>
 <script>
 $('.ui.menu .item')
