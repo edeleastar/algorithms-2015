@@ -1,0 +1,158 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+    </style>
+    <base target="_blank" />
+
+  </head>
+
+  <body>
+
+
+  <div class="ui container">
+<div class="ui four doubling stackable cards">
+      <a class="ui card" href="http://wit-computing.github.io/algorithms-2015/topic05/talk-1/sorts.pdf">
+    <div class="content">
+      <div class="right floated meta"> <i class="film large icon"></i></div>
+      <div class="header"> Sorting </div>
+    </div>
+    <div class="ui bordered rounded image">
+      <img src="http://wit-computing.github.io/algorithms-2015/topic05/talk-1/sorts.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         <p>This talk introduces  the comparable interface and how this is used in sorting algorithms. Three well known sorting algorithms are descibed and you will be shown how sorting can be used to shuffle a deck of cards. </p>
+      </div>
+    </div>
+  </a>
+
+      <a class="ui card" href="http://wit-computing.github.io/algorithms-2015/topic05/talk-2/recursion.pdf">
+    <div class="content">
+      <div class="right floated meta"> <i class="film large icon"></i></div>
+      <div class="header"> Recursion </div>
+    </div>
+    <div class="ui bordered rounded image">
+      <img src="http://wit-computing.github.io/algorithms-2015/topic05/talk-2/recursion.png">
+    </div>
+    <div class="content">
+      <div class="description">
+         <p>This talk serves as a preliminary discussion for covering more advanced sorting algorithms.</p>
+      </div>
+    </div>
+  </a>
+
+      <a class="ui card" href="http://wit-computing.github.io/algorithms-2015/topic05/talk-3/divide_and_conquer.pdf">
+    <div class="content">
+      <div class="right floated meta"> <i class="film large icon"></i></div>
+      <div class="header"> Divide and Conquer </div>
+    </div>
+    <div class="ui bordered rounded image">
+      <img src="http://wit-computing.github.io/algorithms-2015/topic05/talk-3/divide_and_conquer.png">
+    </div>
+    <div class="content">
+      <div class="description">
+         <p>Divide and conquer works by recursively breaking down a problem into two or more smaller  sub-problems(divide) , until these become simple enough to be solved directly (conquer).</p>
+      </div>
+    </div>
+  </a>
+
+      <a class="ui card" href="http://wit-computing.github.io/algorithms-2015/topic05/book-1/index.html">
+    <div class="content">
+      <div class="right floated meta"> <i class="lab large icon"></i></div>
+      <div class="header"> Lab-06 </div>
+    </div>
+    <div class="ui bordered rounded image">
+      <img src="http://wit-computing.github.io/algorithms-2015/topic05/book-1/img/main.png">
+    </div>
+    <div class="content">
+      <div class="description">
+         <p>On competing the lab you will:</p>
+<ul>
+<li>Implement a comparable class.</li>
+<li>Generate random data for testing.</li>
+<li>Sort using insertion and Selection sort.</li>
+<li>Compare the performance of selection and insertion sort. </li>
+</ul>
+      </div>
+    </div>
+  </a>
+
+      <a class="ui card" href="http://wit-computing.github.io/algorithms-2015/topic05/book-2/index.html">
+    <div class="content">
+      <div class="right floated meta"> <i class="lab large icon"></i></div>
+      <div class="header"> assignment-2 </div>
+    </div>
+    <div class="ui bordered rounded image">
+      <img src="http://wit-computing.github.io/algorithms-2015/topic05/book-2/img/main.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         <p>Many companies use recommender systems to suggest products, information, and friends to their customers .  In this assignment you will develop a Movie recommender using existing movie data.</p>
+      </div>
+    </div>
+  </a>
+
+  </div>
+   </div>
+
+
+    <script>
+
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+})    </script>
+
+  </body>
+ </html>
